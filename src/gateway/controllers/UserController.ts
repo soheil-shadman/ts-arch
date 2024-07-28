@@ -5,8 +5,10 @@ import 'reflect-metadata';
 import { IUserService } from '../../domain/interfaces/IUserService';
 import { User } from '../../domain/entities/User';
 import TYPES from '../../types';
+import { CatchError } from '../../common/gateway/catchDecorator';
 
 @controller('/api/users')
+@CatchError()
 export class UsersController {
     constructor(
         @inject(TYPES.IUserService) private userService: IUserService
