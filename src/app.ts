@@ -2,7 +2,7 @@ import express from 'express';
 import setupSwagger from './config/swagger.config';
 import container from './config/inversify.config';
 import { InversifyExpressServer } from 'inversify-express-utils';
-import { errorMiddleware } from './gateway/middlewares/error.middleware';
+import { errorMiddleware } from './gateway/middleware/error.middleware';
 
 const server = new InversifyExpressServer(container);
 server.setConfig((app) => {
